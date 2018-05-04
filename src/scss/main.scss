@@ -1,0 +1,96 @@
+@import 'reset';
+@font-face {
+    font-family:'OpenSans-Light';
+    src:url('../fonts/OpenSans-Light.ttf');
+}
+@font-face {
+	font-family:'PlayfairDisplay-Regular';
+	src:url('../fonts/PlayfairDisplay-Regular.ttf');
+}
+
+.container{
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+  	grid-template-rows: auto;
+	font-family: 'OpenSans-Light';
+}
+
+header{
+	grid-column: 1/4;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	background-color: #000;
+	color: #fff;
+	border-bottom: 1.5rem solid white;
+	text-transform: uppercase;
+	h1{
+  		grid-column: 2 / 3;
+  		text-align: center;
+  		img{
+  			width: 10rem;
+  			padding: 1.5rem;
+  		}
+	}
+	nav {
+  		grid-column-start: 3;
+  		grid-column-end: 4;
+  		display: flex;
+  		justify-content: center;
+  		align-self: flex-end;
+  		h2{
+  			padding: 1.5rem 1rem;
+  			font-size: 0.8rem;
+  			text-align: center;
+  			a:hover { 
+    		color: blue;
+			}
+  		}
+	}
+}
+
+section{
+	grid-column: 1/4;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: auto;
+	grid-gap: 0.6rem;
+	.beer-box{
+		background-color: tan;
+		text-align: center;
+		padding: 2rem 1rem 1.4rem 1rem;
+		img{
+
+		}
+		h3{
+		font-weight: bold;
+		padding: 1rem;
+		}
+		p{
+		font-size: 0.8rem;
+		}
+		.beer-stats{
+			display:flex;
+			// grid-template-columns: repeat(3, 1fr);
+			font-family: PlayfairDisplay-Regular;
+			font-size: 0.6rem;
+			// grid-gap: 0.4rem;
+			justify-content: center;
+	
+			div{
+				line-height: 1.5;
+				margin: 0.4rem 0.2rem;
+				padding: 0.4rem 0.8rem;
+			}
+			.ph{
+				background-color: salmon;
+				color: #fff;
+			}
+		}
+	}
+}
+
+
+
+footer{
+	grid-column: 1/4;
+}
