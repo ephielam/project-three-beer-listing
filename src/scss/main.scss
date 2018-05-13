@@ -155,7 +155,7 @@ footer{
 
 //quick find styles
 
-.single-beer{
+#beers-grid{
 	.single-beer-box{
 		display: grid;
 		grid-template-columns: 1fr 3fr;
@@ -216,9 +216,7 @@ footer{
 		}
 	}
 }
-.another{
-	display: flex;
-	justify-content: center;
+
 	.another-beer{
 		color: #fff;
 		text-transform: uppercase;
@@ -229,7 +227,7 @@ footer{
 		padding: 0 2rem;
 		border: none;
 	}
-}
+
 
 //pickabeer styles
 
