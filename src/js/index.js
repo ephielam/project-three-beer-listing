@@ -8,6 +8,8 @@ import Beer from './beer';
 //for the homepage
 //dipslay page 1 on load
 changePageNum(1);
+const pageLeft = document.getElementById('page-left');
+pageLeft.setAttribute('style','display:none');
 
 //when a page number link is clicked
 document.querySelectorAll('.pagination a').forEach(a => {
@@ -17,12 +19,27 @@ document.querySelectorAll('.pagination a').forEach(a => {
 	    //empty container before before loading new page
 	    const container = document.getElementById('beers-grid');
 	  	container.innerHTML = '';
+	  	const pageLeft = document.getElementById('page-left');
+	    const pageRight = document.getElementById('page-right');
+	    // if page 1 is selected, hide left arrow
+	  	if (page === '1') {
+			pageLeft.setAttribute('style','display:none');
+			pageRight.setAttribute('style','display:inline-block');
+	  	} else if (page === '5') {
+	  	//if page 5 is selected, hide right arrow
+			pageRight.setAttribute('style','display:none');
+			pageLeft.setAttribute('style','display:inline-block');
+	  	} else {
+	  	//make sure arrows are displayed for all other numbers
+	  		pageLeft.setAttribute('style','display:inline-block');
+	  		pageRight.setAttribute('style','display:inline-block');
+	  	};
 	  	//remove 'active' class from all links
 	  	document.querySelectorAll('.pagination a').forEach(a => {
 		  	a.classList.remove('active');
 		  	//add 'active' class to this link
 		  	this.classList.add('active');
-		  });
+		});
 	  	//changePageNum function to show selected page (1-5) info
 		changePageNum(page);
   })
@@ -47,15 +64,20 @@ document.querySelector('.quick-find-page').addEventListener('click', function(ev
 	container.innerHTML = '';
 	//load quickFind
 	quickFind();
-	container.setAttribute('style', 'display: block');
+	// container.setAttribute('style', 'display: block');
 	//hide 'pick-a-beer-form'
 	const form = document.getElementById('pick-a-beer-form');
 	form.setAttribute('style', 'display: none');	
 	//hide pagination
 	const pagination = document.getElementById('pagination');
 	pagination.setAttribute('style', 'display: none');
-	
 });
+
+// document.querySelector('.another-button').addEventListener('click', function(event) {
+// 	const container = document.getElementById('beers-grid');
+// 	container.innerHTML = '';
+// 	quickFind();
+// });
 
 //when the 'pick a beer' page is selected
 document.querySelector('.pick-a-beer-page').addEventListener('click', function(event) {
@@ -116,6 +138,9 @@ function quickFind() {
 	  	const container = document.getElementById('beers-grid');
 	  	container.innerHTML = '';
 
+	  	let innerContainer = document.createElement('div');
+        innerContainer.className = 'inner-container';
+
 	  	let beer = document.createElement('div');
         beer.className = 'single-beer-box';
     //for inside the div, img, name (h2), tagline(h3),desc (p),
@@ -170,15 +195,16 @@ function quickFind() {
             let beerPhValue = document.createElement('span');
             	beerPhValue.className = 'beer-ph-value';
                 beerPhValue.innerText = beerobject.ph; 
-            //add the ingredients button
+        //add the ingredients button
         let ingredientsButton = document.createElement('button');
             ingredientsButton.className = 'ingredients';
             ingredientsButton.innerText = 'Ingredients'; 
+    //add the 'give me another beer' button
     let buttonDiv = document.createElement('div');
         buttonDiv.className = 'button-div';
         let anotherButton = document.createElement('button');
             anotherButton.className = 'another-beer';
-            anotherButton.innerText = 'Give me another beer'; 
+            anotherButton.innerText = 'Give me another beer';
 
     //append all of the above to apporpriate parent elements
     //'another-beer' button inside the 'anotherButton' div
@@ -202,12 +228,12 @@ function quickFind() {
     beer.appendChild(beerStats);
     beer.appendChild(ingredientsButton);
   
-    //bung it all in the html 'beers-grid' section
-    container.appendChild(beer);
-    container.appendChild(buttonDiv);
-	 		// let random = buildRandom(randomBeer);
-	 		// //add6ToPage function from beer script
-	   //   	random.add1ToPage(); 	
+    //beer box and button to the inner container
+    innerContainer.appendChild(beer);
+    innerContainer.appendChild(buttonDiv);
+	 
+	//bung it all in the html 'beers-grid' section
+	container.appendChild(innerContainer);
 	    
   })
   .catch(function (error) {
