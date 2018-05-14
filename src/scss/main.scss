@@ -5,7 +5,7 @@
 }
 @font-face {
 	font-family:'PlayfairDisplay-Regular';
-	src:url('../fonts/PlayfairDisplay-Regular.ttf');
+	src:url('../fonts/PlayfairDisplay-Regular.otf');
 }
 
 $blue: #1485CC;
@@ -201,11 +201,16 @@ footer{
 				display:flex;
 				font-family: PlayfairDisplay-Regular;
 				font-size: 0.8rem;
+				font-weight: normal;
 				justify-content: center;
 				div{
 					// line-height: 1.5;
 					margin: 0.4rem 0.2rem;
 					padding: 0.4rem 0.8rem;
+					span {
+						font-size: 1rem;
+					}
+
 				}
 				.beer-ph{
 					background-color: $ph4650;
@@ -269,6 +274,12 @@ footer{
 	    	padding: 1.6rem;
 	    	font-weight: bold;
 	    	font-size: 0.9rem;
+	    	p{
+	    		margin: 1rem 0.6rem;
+	    	}
+	    	span {
+	    		font-weight: normal;
+	    	}
 	    }
 	}
 	.close {

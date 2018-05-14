@@ -195,7 +195,38 @@ function quickFind() {
             ingredientsButton.addEventListener('click', function(event) {
             	const modal = document.getElementById('modal');
             	modal.setAttribute('style','display:block');
-            });
+            //malt
+            	const modalBody = document.getElementById('modal-body');
+            	modalBody.innerHTML = '';
+            let malt = document.createElement('p');
+            	malt.className = 'malt';
+            	malt.innerHTML = `Malt: ${'<br>'}`;
+            let beerMalt = document.createElement('span');
+            	beerMalt.className = 'beer-malt';
+            	beerMalt.innerText = '';
+                beerMalt.innerText = `${beerobject.ingredients.malt[0].name} (${beerobject.ingredients.malt[0].amount.value} ${beerobject.ingredients.malt[0].amount.unit})`;
+                modalBody.appendChild(malt);
+                malt.appendChild(beerMalt); 
+            //hops
+            let hops = document.createElement('p');
+            	hops.className = 'hops';
+            	hops.innerHTML = `Hops: ${'<br>'}`;
+            let beerHops = document.createElement('span');
+            	beerHops.className = 'beer-hops';
+                beerHops.innerText = `${beerobject.ingredients.hops[0].name} (${beerobject.ingredients.hops[0].amount.value} ${beerobject.ingredients.hops[0].amount.unit})`;
+                modalBody.appendChild(hops);
+                hops.appendChild(beerHops);  
+            //hops            	
+            let yeast = document.createElement('p');
+            	yeast.className = 'yeast';
+            	yeast.innerHTML = `Yeast: ${'<br>'}`;
+            let beerYeast = document.createElement('span');
+            	beerYeast.className = 'beer-yeast';
+            	beerYeast.innerText = '';
+                beerYeast.innerText = beerobject.ingredients.yeast;
+                modalBody.appendChild(yeast);
+                yeast.appendChild(beerYeast);  
+             });
             //when x is clicked close the modal
             const close = document.getElementsByClassName("close")[0];
 			close.addEventListener('click', function(event) {
@@ -245,7 +276,7 @@ function quickFind() {
 	 
 	//bung it all in the html 'beers-grid' section
 	container.appendChild(innerContainer);
-	    
+
   })
   .catch(function (error) {
     console.log(error);
