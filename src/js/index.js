@@ -285,3 +285,17 @@ function quickFind() {
     console.log(error);
   });
 }
+
+const findBeer = document.getElementById('find-beer');
+findBeer.addEventListener('click', function() {
+    alert(`                           ∩
+　　　　　　  　＼＼
+　　　　　　     ／　 ）
+⊂＼＿／￣￣￣　  ／      Sorry,
+　＼＿／  ° ͜ʖ °  （     I haven't
+　　 ）　     　 ／⌒＼    worked out
+　　／　 ＿＿＿ ／⌒＼ ⊃    how to do
+　（　 ／                         this yet! 
+　 　＼＼
+           U`);
+});

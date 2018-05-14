@@ -1,0 +1,139 @@
+//quick find page styles incl ingredients modal
+#beers-grid{
+	.inner-container{
+		grid-column: 1/4;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		margin: 0 auto;
+		.single-beer-box{
+			display: grid;
+			grid-template-columns: 1fr 3fr;
+			grid-template-rows: 2rem 1.5rem 1fr 5rem 2.5rem;
+			background-color: $grey;
+			justify-content: center;
+			text-align: center;
+			align-items: center;
+			padding: 2.5rem 12rem 3.5rem 12rem;
+			img{
+				height: 16rem;
+				margin: 0 auto;
+				grid-column:1/2;
+				grid-row: 1/6;
+				padding: 0 4rem;
+			}
+			h2{
+				font-weight: bold;
+				padding: 1rem;
+				grid-row: 1/2;
+			}
+			h3{
+				color: $blue;
+				grid-row: 2/3;
+				padding-bottom: 0.5rem;
+				font-size: 0.9rem;
+			}
+			p{
+				font-size: 0.7rem;
+				grid-row: 3/4;
+				padding-bottom: 0.6rem;
+			}
+			.beer-stats{
+				grid-row: 4/5;
+				display:flex;
+				font-family: PlayfairDisplay-Regular;
+				font-size: 0.8rem;
+				font-weight: normal;
+				justify-content: center;
+				div{
+					margin: 0.4rem 0.2rem;
+					padding: 0.4rem 0.8rem;
+					span {
+						font-size: 1rem;
+					}
+				}
+				.beer-ph{
+					background-color: $ph4650;
+					color: #fff;
+				}
+			}
+			.ingredients{
+				grid-column: 2/3;
+				grid-row:5/6;
+				color: #fff;
+				text-transform: uppercase;
+				font-size: 0.6rem;
+				height: 2rem;
+				width: 8rem;
+				margin: 0 auto;
+				background-color: $blue;
+				padding: 0 1rem;
+				border: none;
+			}
+		}
+	}	
+	.another-beer{
+		color: #fff;
+		text-transform: uppercase;
+		font-size: 0.6rem;
+		height: 3rem;
+		margin: 2rem 4rem;
+		background-color: $ph46;
+		padding: 0 2rem;
+		border: none;
+	}
+}
+
+//ingredients modal
+#modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    padding-top: 100px; 
+    left: 0;
+    top: 200px;
+    width: 100%; 
+    height: 100%; 
+    background-color: #000;
+    background-color: rgba(0,0,0,0.4); 
+	.ingredients-modal {
+	    background-color: $grey;
+	    margin: auto;
+	    width: 60%;
+	    .modal-header{
+	    	display: flex;
+	    	justify-content: space-between;
+	    	align-items: center;
+	    	background-color: $blue;
+	    	color: #fff;
+	    	text-transform: uppercase;
+	    	padding: 0.6rem 1rem;
+	    	font-size: 0.8rem;
+	    }
+	    .modal-body{
+	    	padding: 1.6rem;
+	    	font-weight: bold;
+	    	font-size: 0.9rem;
+	    	p{
+	    		margin: 1rem 0.6rem;
+	    	}
+	    	span {
+	    		font-weight: normal;
+	    	}
+	    }
+	}
+	.close {
+	    color: #fff;
+	    border: none;
+	    font-size: 1.4rem;
+	    padding: none;
+	    background-color: rgba(0,0,0,0);
+	}
+	.close:hover,
+	.close:focus {
+	    color: #000;
+	    text-decoration: none;
+	    cursor: pointer;
+	}
+}
