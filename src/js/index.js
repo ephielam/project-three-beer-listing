@@ -204,7 +204,9 @@ function quickFind() {
             let beerMalt = document.createElement('span');
             	beerMalt.className = 'beer-malt';
             	beerMalt.innerText = '';
-                beerMalt.innerText = `${beerobject.ingredients.malt[0].name} (${beerobject.ingredients.malt[0].amount.value} ${beerobject.ingredients.malt[0].amount.unit})`;
+            	const ingredients = beerobject.ingredients;
+            	const m = ingredients.malt[0];
+                beerMalt.innerText = `${m.name} (${m.amount.value} ${m.amount.unit})`;
                 modalBody.appendChild(malt);
                 malt.appendChild(beerMalt); 
             //hops
@@ -213,7 +215,8 @@ function quickFind() {
             	hops.innerHTML = `Hops: ${'<br>'}`;
             let beerHops = document.createElement('span');
             	beerHops.className = 'beer-hops';
-                beerHops.innerText = `${beerobject.ingredients.hops[0].name} (${beerobject.ingredients.hops[0].amount.value} ${beerobject.ingredients.hops[0].amount.unit})`;
+            	const h = ingredients.hops[0];
+                beerHops.innerText = `${h.name} (${h.amount.value} ${h.amount.unit})`;
                 modalBody.appendChild(hops);
                 hops.appendChild(beerHops);  
             //hops            	
@@ -223,7 +226,7 @@ function quickFind() {
             let beerYeast = document.createElement('span');
             	beerYeast.className = 'beer-yeast';
             	beerYeast.innerText = '';
-                beerYeast.innerText = beerobject.ingredients.yeast;
+                beerYeast.innerText = ingredients.yeast;
                 modalBody.appendChild(yeast);
                 yeast.appendChild(beerYeast);  
              });
