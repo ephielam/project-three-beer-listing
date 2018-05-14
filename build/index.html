@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="./css/build.css" />
+    <link rel="icon" type="image/png" href="http://simpleicon.com/wp-content/uploads/beer1.png">
+    <title>Beer API - Find Your Beer</title>
+  </head>
+  <body>
+  	<div class="container">
+	  	<header>
+	  		<h1><img src="images/logo.png" title="Beer API Logo" alt="Beer API Logo" class="logo "></h1>
+	  		<nav>
+				<ul>
+				    <li><a href="#" class="beers-page">Beers</a></li>
+				    <li><a href="#" class="quick-find-page">Quick Find</a></li>
+				    <li><a href="#" class="pick-a-beer-page">Pick A Beer</a></li>
+				</ul>
+	  		</nav>
+	  	</header>
+
+	  	<section id="beers-grid">
+	  	</section>
+
+	  	<section class="modal" id="modal">
+			<div class="ingredients-modal" id="ingredients-modal">
+				<div class="modal-header">
+					<h4 class="modal-title">Ingredients</h4>
+          			<button type="button" class="close" data-dismiss="modal">&times;</button>
+        		</div>
+        		<div class=modal-body id="modal-body">
+			  	</div>
+			</div>
+	  	</section>
+
+	  	<section id="pick-a-beer-form">
+	  		<form role="search">
+	  			<h3>Pick a beer</h3><hr>
+ 				<div class="search-items">
+				     <div class="beer-name">
+				     	<label for="beer-name">Name</label>
+				     	<input type="search" id="beer-name" name="beer-name"
+				     	aria-label="Search for a beer by name">
+				     </div>
+				     <div class="beer-hops">
+				     	<label for="beer-hops">Hops</label>
+				     	<input type="search" id="beer-hops" name="beer-hops"
+				     	aria-label="Search for a beer by hops">
+				     </div>
+				     <div class="beer-abv">
+				        <label for="beer-abv">ABV</label>
+				     	<input type="search" id="beer-abv" name="beer-abv" size="10"
+				     	aria-label="Search for a beer by ABV">
+				     </div>
+				     <div class="beer-ibu">
+				     	<label for="beer-ibu">IBU</label>
+				     	<input type="search" id="beer-ibu" name="beer-ibu" size="10"
+				     	aria-label="Search for a beer by IBU">
+				     </div>
+				     <div class="beer-ebc">
+				     	<label for="beer-ebc">EBC</label>
+				     	<input type="search" id="beer-ebc" name="beer-ebc" size="10"
+				     	aria-label="Search for a beer by EBC">
+				     </div>
+				     <button class="find-beer" id="find-beer">Find Beer</button>
+				</div>
+			</form>	  		
+	  	</section>
+
+	  	<footer>
+	  		<nav class="pagination" id="pagination">
+			  <a href="#" id=page-left>&laquo;</a>
+			  <a href="#" id="1" class="active">1</a>
+			  <a href="#" id="2">2</a>
+			  <a href="#" id="3">3</a>
+			  <a href="#" id="4">4</a>
+			  <a href="#" id="5">5</a>
+			  <a href="#" id="page-right">&raquo;</a>
+			</nav>
+	  	</footer>
+  	</div>
+    <script src="js/bundle.js"></script>
+  </body>
+</html>
