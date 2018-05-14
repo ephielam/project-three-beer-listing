@@ -64,7 +64,6 @@ document.querySelector('.quick-find-page').addEventListener('click', function(ev
 	container.innerHTML = '';
 	//load quickFind
 	quickFind();
-	// container.setAttribute('style', 'display: block');
 	//hide 'pick-a-beer-form'
 	const form = document.getElementById('pick-a-beer-form');
 	form.setAttribute('style', 'display: none');	
@@ -72,12 +71,6 @@ document.querySelector('.quick-find-page').addEventListener('click', function(ev
 	const pagination = document.getElementById('pagination');
 	pagination.setAttribute('style', 'display: none');
 });
-
-// document.querySelector('.another-button').addEventListener('click', function(event) {
-// 	const container = document.getElementById('beers-grid');
-// 	container.innerHTML = '';
-// 	quickFind();
-// });
 
 //when the 'pick a beer' page is selected
 document.querySelector('.pick-a-beer-page').addEventListener('click', function(event) {
@@ -198,15 +191,33 @@ function quickFind() {
         //add the ingredients button
         let ingredientsButton = document.createElement('button');
             ingredientsButton.className = 'ingredients';
+            //when button is clicked display the ingredients modal
+            ingredientsButton.addEventListener('click', function(event) {
+            	const modal = document.getElementById('modal');
+            	modal.setAttribute('style','display:block');
+            });
+            //when x is clicked close the modal
+            const close = document.getElementsByClassName("close")[0];
+			close.addEventListener('click', function(event) {
+    		  	modal.setAttribute('style','display:none');
+			});
             ingredientsButton.innerText = 'Ingredients'; 
     //add the 'give me another beer' button
     let buttonDiv = document.createElement('div');
         buttonDiv.className = 'button-div';
         let anotherButton = document.createElement('button');
             anotherButton.className = 'another-beer';
+            //refresh to another random beer by running the 'quickFind' function again 
+            anotherButton.addEventListener('click', function(event) {
+				//empty the container before loading new page
+				const container = document.getElementById('beers-grid');
+				container.innerHTML = '';
+				//load quickFind
+				quickFind();
+			});
             anotherButton.innerText = 'Give me another beer';
 
-    //append all of the above to apporpriate parent elements
+        //append all of the above to apporpriate parent elements
     //'another-beer' button inside the 'anotherButton' div
     buttonDiv.appendChild(anotherButton);
     //contents to abv-ibu-ph baby divs         
